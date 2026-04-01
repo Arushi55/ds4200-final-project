@@ -1,0 +1,89 @@
+genre,rating,count,pct
+International Movies,G,1,0.0
+International Movies,TV-G,39,1.5
+International Movies,PG,11,0.4
+International Movies,TV-Y,0,0.0
+International Movies,TV-Y7,1,0.0
+International Movies,TV-PG,253,9.9
+International Movies,PG-13,51,2.0
+International Movies,TV-14,1008,39.6
+International Movies,R,100,3.9
+International Movies,TV-MA,1053,41.4
+International Movies,NR,27,1.1
+Dramas,G,5,0.2
+Dramas,TV-G,23,1.0
+Dramas,PG,68,2.8
+Dramas,TV-Y,3,0.1
+Dramas,TV-Y7,1,0.0
+Dramas,TV-PG,194,8.1
+Dramas,PG-13,192,8.0
+Dramas,TV-14,685,28.6
+Dramas,R,374,15.6
+Dramas,TV-MA,822,34.3
+Dramas,NR,27,1.1
+Comedies,G,11,0.7
+Comedies,TV-G,29,1.8
+Comedies,PG,148,9.1
+Comedies,TV-Y,19,1.2
+Comedies,TV-Y7,40,2.5
+Comedies,TV-PG,150,9.2
+Comedies,PG-13,168,10.3
+Comedies,TV-14,454,27.8
+Comedies,R,179,11.0
+Comedies,TV-MA,419,25.7
+Comedies,NR,14,0.9
+Action & Adventure,G,1,0.1
+Action & Adventure,TV-G,0,0.0
+Action & Adventure,PG,31,3.7
+Action & Adventure,TV-Y,0,0.0
+Action & Adventure,TV-Y7,0,0.0
+Action & Adventure,TV-PG,33,3.9
+Action & Adventure,PG-13,148,17.5
+Action & Adventure,TV-14,210,24.8
+Action & Adventure,R,220,26.0
+Action & Adventure,TV-MA,195,23.0
+Action & Adventure,NR,9,1.1
+Independent Movies,G,0,0.0
+Independent Movies,TV-G,3,0.4
+Independent Movies,PG,6,0.8
+Independent Movies,TV-Y,0,0.0
+Independent Movies,TV-Y7,2,0.3
+Independent Movies,TV-PG,33,4.4
+Independent Movies,PG-13,35,4.7
+Independent Movies,TV-14,118,15.7
+Independent Movies,R,193,25.7
+Independent Movies,TV-MA,343,45.7
+Independent Movies,NR,17,2.3
+Romantic Movies,G,0,0.0
+Romantic Movies,TV-G,15,2.5
+Romantic Movies,PG,23,3.8
+Romantic Movies,TV-Y,0,0.0
+Romantic Movies,TV-Y7,0,0.0
+Romantic Movies,TV-PG,69,11.5
+Romantic Movies,PG-13,87,14.5
+Romantic Movies,TV-14,205,34.1
+Romantic Movies,R,53,8.8
+Romantic Movies,TV-MA,148,24.6
+Romantic Movies,NR,2,0.3
+Children & Family Movies,G,32,5.5
+Children & Family Movies,TV-G,44,7.6
+Children & Family Movies,PG,195,33.6
+Children & Family Movies,TV-Y,89,15.3
+Children & Family Movies,TV-Y7,110,19.0
+Children & Family Movies,TV-PG,81,14.0
+Children & Family Movies,PG-13,11,1.9
+Children & Family Movies,TV-14,17,2.9
+Children & Family Movies,R,0,0.0
+Children & Family Movies,TV-MA,1,0.2
+Children & Family Movies,NR,0,0.0
+Thrillers,G,0,0.0
+Thrillers,TV-G,0,0.0
+Thrillers,PG,2,0.3
+Thrillers,TV-Y,0,0.0
+Thrillers,TV-Y7,0,0.0
+Thrillers,TV-PG,5,0.9
+Thrillers,PG-13,54,9.4
+Thrillers,TV-14,117,20.3
+Thrillers,R,153,26.6
+Thrillers,TV-MA,240,41.7
+Thrillers,NR,4,0.7

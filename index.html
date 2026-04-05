@@ -17,25 +17,20 @@
         DS4200 — Information Presentation &amp; Data Visualization
       </p>
       <h1>How Netflix Shapes<br /><span>Modern Media</span></h1>
-      <p>{quick blurb here}</p>
     </header>
 
     <!-- STATS BAR -->
     <div class="stats-bar">
       <div class="stat-item">
-        <span class="num">{add number here}</span
+        <span class="num">5,701</span
         ><span class="lbl">Titles Analyzed</span>
       </div>
       <div class="stat-item">
-        <span class="num">{add number here}</span
+        <span class="num">13</span
         ><span class="lbl">Attributes</span>
       </div>
       <div class="stat-item">
-        <span class="num">{add number here}</span
-        ><span class="lbl">Top Countries</span>
-      </div>
-      <div class="stat-item">
-        <span class="num">{add number here}</span
+        <span class="num">2008-2021</span
         ><span class="lbl">Year Range</span>
       </div>
     </div>
@@ -45,32 +40,37 @@
       <div class="section">
         <p class="section-tag">Introduction</p>
         <h2>Why Netflix?</h2>
-        <p>{Content Goes Here}</p>
-        <p>{Content Goes Here}</p>
+        <p>In recent years, streaming media has surpassed traditional broadcast television as the 
+          dominant form of content consumption. This project examines how Netflix uses data-driven 
+          decision-making to curate, recommend, and produce content for a global audience. By analyzing 
+          trends in content type, production origin, and genre growth, we uncover the strategies that help 
+          Netflix attract and retain millions of subscribers. Our analysis highlights the balance between 
+          international expansion and content diversity, showing how Netflix’s library reflects both global 
+          reach and targeted audience segmentation. Through these insights, we aim to better understand how 
+          data shapes user engagement and supports Netflix’s continued competitive advantage in the streaming 
+          industry.</p>
       </div>
 
       <!-- DATA -->
       <div class="section">
         <p class="section-tag">Dataset</p>
         <h2>The Data</h2>
-        <p>{Content Goes Here}</p>
+        <p>The dataset used for this analysis is the Netflix Movies and TV Shows Dataset from Kaggle, which provides a comprehensive overview of Netflix’s content library. Each of the initial 8,807 observations in the dataset represents a unique movie or TV show and is detailed through 12 distinct features: show_id (unique id), type (movie or TV show), title, director, cast, country, date_added, release_year, rating (content maturity rating), duration, listed_in (genre), and description. These features allow us to analyze both categorical and numerical patterns across the dataset. </p> 
+        <br>
+        <p>To preserve data volume we decided to fill missing values in attributes such as country and rating with ”Unknown.” However, we chose to drop rows with missing values in fields such as director, cast, and date_added because we couldn’t draw meaningful analysis without this data. In addition to this, we identified duration values (ex. “74 min”) that were incorrectly stored in the rating column and reassigned them to the appropriate field. Next, we engineered a new feature by splitting the duration attribute into numeric values and units (minutes vs. seasons) to allow for more precise analysis. Lastly, we converted the date_added field into a proper datetime format for time-based visualizations. After cleaning, the dataset contained 5,701 unique observations and offered a more reliable representation of Netflix’s catalog to analyze. </p>
 
         <div class="data-grid">
           <div class="data-card">
-            <span class="num">{add number here}</span
+            <span class="num">8,807</span
+            ><span class="lbl">Original rows</span>
+          </div>
+          <div class="data-card">
+            <span class="num">5,701</span
             ><span class="lbl">Rows after cleaning</span>
           </div>
           <div class="data-card">
-            <span class="num">{add number here}</span
+            <span class="num">13</span
             ><span class="lbl">Attributes</span>
-          </div>
-          <div class="data-card">
-            <span class="num">{add number here}</span
-            ><span class="lbl">Unknown country rows</span>
-          </div>
-          <div class="data-card">
-            <span class="num">{add number here}</span
-            ><span class="lbl">Original rows</span>
           </div>
         </div>
 
@@ -286,20 +286,27 @@
         <div class="findings-grid">
           <div class="finding-card">
             <div class="finding-num">01</div>
-            <h4>{add content here}</h4>
-            <p>{add content here}</p>
+            <h4>International Growth </h4>
+            <p>Our analysis shows that while the United States remains the dominant content producer, Netflix has significantly expanded its international catalog, with countries such as India, the United Kingdom, and South Korea contributing a growing share of content. The “International” genre has seen the most aggressive growth in recent years and highlights Netflix’s investment in global markets. This suggests that Netflix is not only expanding geographically but is also tailoring content to regional audiences to increase engagement and subscriber growth. </p>
           </div>
           <div class="finding-card">
             <div class="finding-num">02</div>
-            <h4>{add content here}</h4>
-            <p>{add content here}</p>
+            <h4>Maturity Rating Trends</h4>
+            <p>Our analysis reveals that a clear pattern exists between genre and target audience. Genres such as Horror and International content are heavily associated with mature ratings (TV-MA), while Kids content is concentrated in lower ratings like TV-Y. This suggests that Netflix strategically aligns content characteristics with specific demographic groups to match viewer preferences and maximize watch time.</p>
           </div>
           <div class="finding-card">
             <div class="finding-num">03</div>
-            <h4>{add content here}</h4>
-            <p>{add content here}</p>
+            <h4>Evolution of Content Strategy</h4>
+            <p>Our analysis highlights that there has been a growth in genres (Drama and International) and a stability in runtimes since the early 2000s. This suggests that Netflix is expanding its offerings and adjusting its content lengths to match modern viewing preferences and habits. This flexibility allows the platform to remain relevant in a highly competitive streaming market. </p>
           </div>
         </div>
+        <br>
+        <h2>Future Work</h2>
+        <p>
+          One key limitation of our analysis is that the dataset only includes content through 2021, meaning it does not capture more recent shifts in Netflix’s strategy. Future work could extend this analysis by incorporating data from the past five years (2022–2026) to examine how trends in genre distribution, international expansion, and content length have continued to evolve.
+        </p>
+        <br>
+        <p>Additionally, a deeper exploration of country-specific insights would provide a more detailed understanding of Netflix’s global strategy. For example, future analysis could compare genre preferences, content type distributions, and growth trends across individual countries or regions. This would help identify how Netflix tailors its content to local audiences and which markets are driving the most growth.</p>
       </div>
     </div>
     <!-- /container -->

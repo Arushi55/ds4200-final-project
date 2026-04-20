@@ -161,11 +161,11 @@
             <div class="viz-card-header-left">
               <h3>2. Top 10 Producing Countries by Content Type</h3>
               <p>
-                Stacked bar chart showing Movies vs. TV Shows per country. Hover
-                any segment for exact counts.
+                Click any country bar to explore its genre breakdown in the
+                linked right panel. Hover segments for exact counts.
               </p>
             </div>
-            <span class="viz-badge">D3 · Tooltip</span>
+            <span class="viz-badge">D3 · Brush &amp; Link · Tooltip</span>
           </div>
           <div class="viz-body">
             <div id="barplot"></div>
@@ -259,22 +259,17 @@
         <div class="viz-card">
           <div class="viz-card-header">
             <div class="viz-card-header-left">
-              <h3>5. Genre Breakdown by Country</h3>
+              <h3>5. Genre Breakdown by Content Type (Treemap)</h3>
               <p>
-                Use the dropdown to switch countries. Hover any bar for exact
-                counts and percentage of output.
+                Click Movies or TV Shows to explore genre breakdown. Click
+                ← Back to return. Hover any tile for exact counts and
+                percentages.
               </p>
             </div>
-            <span class="viz-badge">Altair · Dropdown · Tooltip </span>
+            <span class="viz-badge">D3 · Treemap · Drill-Down</span>
           </div>
-          <div class="viz-body" style="background: #fff; padding: 16px">
-            <iframe
-              src="graph5_genre_by_country.html"
-              onload="
-                this.style.height =
-                  this.contentDocument.body.scrollHeight + 40 + 'px'
-              "
-            ></iframe>
+          <div class="viz-body" style="background: #f5f0eb; padding: 0; overflow: hidden;">
+            <div id="treemap"></div>
           </div>
           <div class="viz-takeaway">
             <strong>Takeaway:</strong> The graph shows the genre distribution of
@@ -378,219 +373,9 @@
       Netflix Titles Dataset (Kaggle)
     </footer>
 
-    <!-- D3 — Graph 2 inlined -->
+    <!-- D3 — Graphs 2 & 5 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script>
-      (function () {
-        const csvString = `country,type,count
-United States,Movie,2102
-United States,TV Show,31
-India,Movie,902
-India,TV Show,8
-Unknown,Movie,333
-Unknown,TV Show,31
-United Kingdom,Movie,325
-United Kingdom,TV Show,22
-Canada,Movie,162
-Canada,TV Show,4
-France,Movie,139
-France,TV Show,6
-Spain,Movie,115
-Spain,TV Show,7
-Egypt,Movie,95
-Japan,Movie,81
-Japan,TV Show,10
-Nigeria,Movie,85
-Nigeria,TV Show,4`;
-
-        const rawData = d3.csvParse(csvString);
-        rawData.forEach((d) => {
-          d.count = +d.count;
-        });
-
-        const countryMap = {};
-        rawData.forEach((d) => {
-          if (!countryMap[d.country])
-            countryMap[d.country] = {
-              country: d.country,
-              Movie: 0,
-              "TV Show": 0,
-            };
-          countryMap[d.country][d.type] = d.count;
-        });
-        const pivoted = Object.values(countryMap);
-        pivoted.forEach((d) => {
-          d.total = d.Movie + d["TV Show"];
-        });
-        const countryOrder = [...new Set(rawData.map((d) => d.country))];
-        pivoted.sort(
-          (a, b) =>
-            countryOrder.indexOf(a.country) - countryOrder.indexOf(b.country),
-        );
-
-        const width = 900,
-          height = 520;
-        const margin = { top: 70, bottom: 30, left: 145, right: 10 };
-
-        const svg = d3
-          .select("#barplot")
-          .append("svg")
-          .attr("width", "100%")
-          .attr("viewBox", `0 0 ${width} ${height}`)
-          .style("background", "#f5f0eb")
-          .style("font-family", "Arial, sans-serif");
-
-        svg
-          .append("text")
-          .attr("x", width / 2)
-          .attr("y", 22)
-          .style("text-anchor", "middle")
-          .style("font-size", "14px")
-          .style("font-weight", "bold")
-          .style("fill", "#222")
-          .text("Top 10 Countries by Content Type");
-
-        const types = ["Movie", "TV Show"];
-        const y = d3
-          .scaleBand()
-          .domain(pivoted.map((d) => d.country))
-          .range([margin.top, height - margin.bottom])
-          .padding(0.25);
-        const x = d3
-          .scaleLinear()
-          .domain([0, d3.max(pivoted, (d) => d.total) * 1.08])
-          .range([margin.left, width - margin.right])
-          .nice();
-        const color = d3
-          .scaleOrdinal()
-          .domain(types)
-          .range(["#4e8de8", "#e06040"]);
-        const stacked = d3
-          .stack()
-          .keys(types)
-          .value((d, key) => d[key])(pivoted);
-
-        svg
-          .append("g")
-          .attr("transform", `translate(0,${margin.top})`)
-          .call(
-            d3
-              .axisBottom(x)
-              .ticks(7)
-              .tickSize(height - margin.top - margin.bottom)
-              .tickFormat(""),
-          )
-          .call((g) => g.select(".domain").remove())
-          .call((g) =>
-            g
-              .selectAll(".tick line")
-              .style("stroke", "#ddd")
-              .style("stroke-width", "1px"),
-          );
-
-        svg
-          .append("g")
-          .attr("transform", `translate(${margin.left},0)`)
-          .call(
-            d3
-              .axisLeft(y)
-              .tickSize(-(width - margin.left - margin.right))
-              .tickFormat(""),
-          )
-          .call((g) => g.select(".domain").remove())
-          .call((g) =>
-            g
-              .selectAll(".tick line")
-              .style("stroke", "#ddd")
-              .style("stroke-width", "1px"),
-          );
-
-        svg
-          .append("g")
-          .attr("transform", `translate(${margin.left},0)`)
-          .call(d3.axisLeft(y).tickSize(0).tickPadding(10))
-          .call((g) => g.select(".domain").remove())
-          .selectAll("text")
-          .style("font-size", "12px")
-          .style("fill", "#333");
-
-        svg
-          .append("g")
-          .attr("transform", `translate(0,${height - margin.bottom})`)
-          .call(d3.axisBottom(x).ticks(7).tickFormat(d3.format(",")))
-          .call((g) => g.select(".domain").remove())
-          .selectAll("text")
-          .style("font-size", "11px")
-          .style("fill", "#666");
-
-        const tooltip = d3
-          .select("body")
-          .append("div")
-          .style("position", "absolute")
-          .style("background", "rgba(30,30,30,0.92)")
-          .style("color", "#fff")
-          .style("padding", "10px 14px")
-          .style("border-radius", "6px")
-          .style("font-size", "13px")
-          .style("visibility", "hidden")
-          .style("line-height", "2")
-          .style("pointer-events", "none");
-
-        svg
-          .selectAll(".layer")
-          .data(stacked)
-          .enter()
-          .append("g")
-          .attr("class", "layer")
-          .attr("fill", (d) => color(d.key))
-          .selectAll("rect")
-          .data((d) => d)
-          .enter()
-          .append("rect")
-          .attr("y", (d) => y(d.data.country))
-          .attr("x", (d) => x(d[0]))
-          .attr("width", (d) => Math.max(0, x(d[1]) - x(d[0])))
-          .attr("height", y.bandwidth())
-          .attr("rx", 2)
-          .on("mouseover", function (event, d) {
-            tooltip
-              .style("visibility", "visible")
-              .html(
-                `<strong>${d.data.country}</strong><br>` +
-                  `<span style="display:inline-block;width:10px;height:10px;background:#4e8de8;border-radius:2px;margin-right:6px;"></span>Movies: ${d.data.Movie.toLocaleString()}<br>` +
-                  `<span style="display:inline-block;width:10px;height:10px;background:#e06040;border-radius:2px;margin-right:6px;"></span>TV Shows: ${d.data["TV Show"].toLocaleString()}<br>` +
-                  `<strong>Total: ${d.data.total.toLocaleString()}</strong>`,
-              );
-          })
-          .on("mousemove", function (event) {
-            tooltip
-              .style("top", event.pageY - 10 + "px")
-              .style("left", event.pageX + 14 + "px");
-          })
-          .on("mouseout", function () {
-            tooltip.style("visibility", "hidden");
-          });
-
-        const legend = svg
-          .append("g")
-          .attr("transform", `translate(${margin.left}, 40)`);
-        types.forEach((type, i) => {
-          const g = legend
-            .append("g")
-            .attr("transform", `translate(${i * 120}, 0)`);
-          g.append("rect")
-            .attr("width", 14)
-            .attr("height", 14)
-            .attr("rx", 2)
-            .attr("fill", color(type));
-          g.append("text")
-            .attr("x", 20)
-            .attr("y", 11)
-            .text(type === "Movie" ? "Movies" : "TV Shows")
-            .style("font-size", "12px")
-            .style("fill", "#333");
-        });
-      })();
-    </script>
+    <script src="graph2_country_reach.js"></script>
+    <script src="graph5_treemap.js"></script>
   </body>
 </html>

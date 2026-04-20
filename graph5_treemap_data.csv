@@ -1,0 +1,21 @@
+type,genre,value
+Movie,International Movies,2548
+Movie,Dramas,2398
+Movie,Comedies,1636
+Movie,Action & Adventure,848
+Movie,Independent Movies,751
+Movie,Romantic Movies,604
+Movie,Children & Family Movies,583
+Movie,Thrillers,575
+Movie,Documentaries,418
+Movie,Horror Movies,352
+TV Show,International TV Shows,107
+TV Show,TV Dramas,61
+TV Show,Crime TV Shows,45
+TV Show,TV Comedies,39
+TV Show,Romantic TV Shows,28
+TV Show,British TV Shows,21
+TV Show,Docuseries,17
+TV Show,TV Action & Adventure,16
+TV Show,Kids' TV,14
+TV Show,Stand-Up Comedy & Talk Shows,12

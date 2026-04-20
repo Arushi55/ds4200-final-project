@@ -1,0 +1,79 @@
+country,genre,count,pct
+United States,Action & Adventure,321,11.9
+United States,Children & Family Movies,318,11.8
+United States,Comedies,599,22.2
+United States,Dramas,667,24.7
+United States,Independent Movies,330,12.2
+United States,International Movies,34,1.3
+United States,Romantic Movies,194,7.2
+United States,Thrillers,233,8.6
+India,Action & Adventure,130,5.7
+India,Children & Family Movies,20,0.9
+India,Comedies,311,13.6
+India,Dramas,640,27.9
+India,Independent Movies,160,7.0
+India,International Movies,823,35.9
+India,Romantic Movies,117,5.1
+India,Thrillers,89,3.9
+Unknown,Action & Adventure,42,7.6
+Unknown,Children & Family Movies,80,14.5
+Unknown,Comedies,83,15.0
+Unknown,Dramas,104,18.8
+Unknown,Independent Movies,11,2.0
+Unknown,International Movies,179,32.4
+Unknown,Romantic Movies,25,4.5
+Unknown,Thrillers,28,5.1
+United Kingdom,Action & Adventure,50,10.3
+United Kingdom,Children & Family Movies,23,4.7
+United Kingdom,Comedies,58,12.0
+United Kingdom,Dramas,132,27.2
+United Kingdom,Independent Movies,53,10.9
+United Kingdom,International Movies,101,20.8
+United Kingdom,Romantic Movies,26,5.4
+United Kingdom,Thrillers,42,8.7
+Canada,Action & Adventure,16,6.3
+Canada,Children & Family Movies,35,13.8
+Canada,Comedies,54,21.3
+Canada,Dramas,45,17.7
+Canada,Independent Movies,27,10.6
+Canada,International Movies,31,12.2
+Canada,Romantic Movies,19,7.5
+Canada,Thrillers,27,10.6
+France,Action & Adventure,24,8.1
+France,Children & Family Movies,10,3.4
+France,Comedies,34,11.5
+France,Dramas,72,24.4
+France,Independent Movies,22,7.5
+France,International Movies,109,36.9
+France,Romantic Movies,10,3.4
+France,Thrillers,14,4.7
+Spain,Action & Adventure,6,2.3
+Spain,Children & Family Movies,5,1.9
+Spain,Comedies,39,14.9
+Spain,Dramas,55,21.1
+Spain,Independent Movies,15,5.7
+Spain,International Movies,101,38.7
+Spain,Romantic Movies,11,4.2
+Spain,Thrillers,29,11.1
+Egypt,Action & Adventure,14,6.3
+Egypt,Children & Family Movies,1,0.4
+Egypt,Comedies,56,25.1
+Egypt,Dramas,40,17.9
+Egypt,Independent Movies,5,2.2
+Egypt,International Movies,92,41.3
+Egypt,Romantic Movies,11,4.9
+Egypt,Thrillers,4,1.8
+Japan,Action & Adventure,48,34.8
+Japan,Children & Family Movies,12,8.7
+Japan,Dramas,12,8.7
+Japan,Independent Movies,1,0.7
+Japan,International Movies,58,42.0
+Japan,Romantic Movies,3,2.2
+Japan,Thrillers,4,2.9
+Nigeria,Action & Adventure,3,1.4
+Nigeria,Comedies,38,17.4
+Nigeria,Dramas,58,26.6
+Nigeria,Independent Movies,6,2.8
+Nigeria,International Movies,80,36.7
+Nigeria,Romantic Movies,18,8.3
+Nigeria,Thrillers,15,6.9

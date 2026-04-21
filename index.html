@@ -151,7 +151,11 @@
             though at a slower pace compared to "International" and "Dramas."
             Overall, the graph suggests that Netflix has been diversifying its
             content library, with a notable emphasis on international
-            productions in recent years.
+            productions in recent years. The spike centered in the middle of the
+            graph (2016-2018) is likle a result of the agressive content
+            acquisition strategy Netflix undertook during that period to rapidly
+            expand its library and attract new subscribers which also included
+            heavy investment into Netflix original content.
           </div>
         </div>
 
@@ -171,19 +175,18 @@
             <div id="barplot"></div>
           </div>
           <div class="viz-takeaway">
-            <strong>Takeaway:</strong> This graph shows that, as expected for an
-            American media company, the majority of Netflix's content is
-            produced in the United States, with a significant lead over the next
-            highest producing country, India. The United States has a much
-            larger proportion of movies compared to TV shows, while India also
-            has a strong focus on movies but with a smaller gap between the two
-            content types. The "Unknown" category is notable for having a large
-            number of movies and TV shows, which indicates the gaps in the
-            dataset. The total amount of content produced in the next seven
-            countries combined is still less than the United States. Overall,
-            the graph highlights the dominance of the United States in Netflix's
-            content production while also showcasing the global diversity of its
-            offerings.
+            <strong>Takeaway:</strong> The United States produced 2,133 titles,
+            more than twice India's (at second place) 910, and nearly matches
+            all other nine countries combined. TV shows are a marginal share of
+            output everywhere: less than 2% for the U.S., less than 1% for
+            India, with Japan showing the highest proportion at roughly 11%.
+            Clicking through the genre panel reveals a hidden asymmetry: the
+            U.S. dedicates only 1.3% of its output to "International Movies,"
+            while every other country ranges from 20% to 42% which is a
+            consequence of Netflix's U.S.-centric labeling system rather than a
+            true genre preference. Japan's catalog is the most concentrated,
+            with just two genres (International and Action &amp; Adventure)
+            accounting for 77% of its titles.
           </div>
         </div>
 
@@ -191,7 +194,43 @@
         <div class="viz-card">
           <div class="viz-card-header">
             <div class="viz-card-header-left">
-              <h3>3. Genre vs. Maturity Rating Heatmap</h3>
+              <h3>3. Genre Breakdown by Content Type (Treemap)</h3>
+              <p>
+                Click Movies or TV Shows to explore genre breakdown. Click
+                "Back" button to return. Hover any tile for exact counts and
+                percentages.
+              </p>
+            </div>
+            <span class="viz-badge">D3 · Treemap </span>
+          </div>
+          <div
+            class="viz-body"
+            style="background: #f5f0eb; padding: 0; overflow: hidden"
+          >
+            <div id="treemap"></div>
+          </div>
+          <div class="viz-takeaway">
+            <strong>Takeaway:</strong> The treemap makes the platform's
+            movie-heavy imbalance immediately clear: the top 10 movie genres
+            represent roughly 30 times more titles than the top 10 TV show
+            genres combined. Within movies, "International Movies" edges out
+            "Dramas" as the single largest genre (2,548 vs. 2,398), reinforcing
+            how much of Netflix's catalog is labeled non-domestic content. On
+            the TV side, Crime TV Shows rank third (45 titles) and "British TV
+            Shows" appears as its own dedicated genre. It is the only country
+            given that treatment, suggesting UK origin television carries enough
+            brand identity to function as a genre category. Documentaries and
+            Docuseries have notable presence on both sides, pointing to a
+            consistent documentary-friendly acquisition strategy across content
+            types.
+          </div>
+        </div>
+
+        <!-- VIZ 4 -->
+        <div class="viz-card">
+          <div class="viz-card-header">
+            <div class="viz-card-header-left">
+              <h3>4. Genre vs. Maturity Rating Heatmap</h3>
               <p>
                 Toggle between % of genre and raw count with the radio buttons.
                 Hover any cell for details.
@@ -209,30 +248,32 @@
             ></iframe>
           </div>
           <div class="viz-takeaway">
-            <strong>Takeaway:</strong> The graph shows the distribution of
-            content across different genres and maturity ratings on Netflix. The
-            "International" genre has a significant portion of content rated as
-            "TV-MA," which may indicate that international productions tend to
-            have more mature themes. The "Horror" genre also has a high
-            percentage of "TV-MA" content, which is consistent with the genre's
-            focus on mature and intense themes. The "Kids" genre is
-            predominantly rated as "TV-Y," which is expected given its target
-            audience. The "Documentaries" genre has a more even distribution
-            across maturity ratings, suggesting a wide range of content that
-            appeals to different age groups. Overall, the graph highlights how
-            different genres on Netflix cater to various audiences based on
-            their maturity ratings.
+            <strong>Takeaway:</strong> The heatmap reveals stark differences in
+            maturity rating distributions across countries, with cells
+            progressing from light blue (low concentration) to dark green (high
+            concentration) so the dominant rating for each country reads at a
+            glance. Spain concentrates 82.8% of its output at TV-MA which is the
+            single darkest cell in the chart; followed by Turkey (58.3%); and
+            France (55.2%), all clustering heavily on the mature end. India and
+            Egypt load predominantly onto TV-14 (58.2% and 67.4% respectively),
+            a rating Netflix applies extensively to international content that
+            doesn't map cleanly onto the American R or TV-MA categories. The
+            United States is the most evenly distributed row: no single rating
+            exceeds 26.2%, and lighter-blue cells span the full width of the
+            chart. Hatched cells mark country–rating combinations with zero
+            titles, making it immediately clear that G, PG, and TV-Y content is
+            almost exclusively a US and English-language phenomenon.
           </div>
         </div>
 
-        <!-- VIZ 4 -->
+        <!-- VIZ 5 -->
         <div class="viz-card">
           <div class="viz-card-header">
             <div class="viz-card-header-left">
-              <h3>4. Movie Runtime Over Time</h3>
+              <h3>5. Movie Runtime Over Time</h3>
               <p>
-                Mean  movie runtime by release year across Netflix's
-                full catalog (1942–2021).
+                Mean movie runtime by release year across Netflix's full catalog
+                (1942–2021).
               </p>
             </div>
             <span class="viz-badge">matplotlib · seaborn</span>
@@ -252,43 +293,6 @@
             Overall, the graph highlights how movie runtimes on Netflix have
             evolved over time, reflecting changes in audience preferences and
             content strategies.
-          </div>
-        </div>
-
-        <!-- VIZ 5 -->
-        <div class="viz-card">
-          <div class="viz-card-header">
-            <div class="viz-card-header-left">
-              <h3>5. Genre Breakdown by Content Type (Treemap)</h3>
-              <p>
-                Click Movies or TV Shows to explore genre breakdown. Click "Back" button to return. Hover any tile for exact counts and
-                percentages.
-              </p>
-            </div>
-            <span class="viz-badge">D3 · Treemap </span>
-          </div>
-          <div class="viz-body" style="background: #f5f0eb; padding: 0; overflow: hidden;">
-            <div id="treemap"></div>
-          </div>
-          <div class="viz-takeaway">
-            <strong>Takeaway:</strong> The graph shows the genre distribution of
-            Netflix content for different countries. The United States has a
-            diverse range of genres, with "Dramas," "International," and
-            "Comedies" being the most prominent. India has a strong focus on
-            "Dramas" and "International" content, which may reflect the
-            preferences of its audience. The "Unknown" category has a similar
-            distribution to the United States, which could indicate that many of
-            the unknown entries are also from the US. The United Kingdom has a
-            notable amount of "Dramas" and "International" content, while Canada
-            has a more balanced distribution across genres. France and Spain
-            have a strong emphasis on "Dramas" and "International" genres, while
-            Egypt, Japan, and Nigeria show a more concentrated focus on specific
-            genres. Overall, the graph highlights how Netflix's content
-            offerings vary by country, reflecting regional preferences and
-            production trends. However, any "International" content is not
-            broken down by country, which limits the insights we can draw about
-            the specific genre preferences within that category for each
-            country.
           </div>
         </div>
       </div>
